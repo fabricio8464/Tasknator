@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Tasknator/bin/Debug/net8.0
+/Tasknator/.vs/Tasknator/v17
+/Tasknator/.vs/Tasknator/FileContentIndex
+/Tasknator/.vs/Tasknator/DesignTimeBuild
+/.vs
+/Tasknator/.vs/Tasknator/config
