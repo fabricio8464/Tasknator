@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Tasknator",
+    "version": "1.0"
+  },
+  "paths": {
+    "/tasks": {
+      "get": {
+        "tags": [
+          "Tasknator"
+        ],
+        "operationId": "Tasks",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TaskEntity"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TaskEntity": {
+        "required": [
+          "estimatedEndDate",
+          "initialDate",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "initialDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estimatedEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deadLine": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "finished": {
+            "type": "boolean"
+          },
+          "daysWeekToRepeat": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
